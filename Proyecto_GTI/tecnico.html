@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tecnico | Consultas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos_tecnico.css">
+
+    <!--fuente para el título-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!--fuente para el texto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 5px;
+        }
+        td{
+            text-align: center;
+        }
+    </style>
+
+</head>
+<body>
+   <!-- Header -->
+   <header>
+    <!-- Logo -->
+    <img class="logo" src="assets/images/logoGTI.svg" alt="Logo GTI" id="logo"/>
+
+      <!-- Actualizar página al clicar el logo -->
+<script src="js/logo_refresh.js"></script> <!-- NO DEBERÍA RECARGAR, DEBE HABER UN LINK A LA LANDING PAGE -->
+
+</header>
+
+
+    <!--contenido de la página-->
+
+    <div class="container"> <!--cajas con valores a introducir-->
+
+        <h1 class="titulo">Consultas pendientes</h1> 
+
+        <table class="tabla" style="width: 100%;">
+            <tr>
+                <th>USUARIO</th>
+                <th>FORMULARIO</th>
+                <th>ESTADO DE LA CONSULTA</th>
+            </tr>
+
+            <tr>
+                <td>grupo3@gmail.com</td>
+                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
+                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
+                    <label for="miCheckbox">Hecho</label></td>
+            </tr>
+
+            <tr>
+                <td>grupo3@gmail.com</td>
+                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
+                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
+                    <label for="miCheckbox">Hecho</label></td>
+            </tr>
+
+            <tr>
+                <td>grupo3@gmail.com</td>
+                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
+                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
+                    <label for="miCheckbox">Hecho</label></td>
+            </tr>
+
+            <tr>
+                <td>grupo3@gmail.com</td>
+                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
+                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
+                    <label for="miCheckbox">Hecho</label></td>
+            </tr>
+
+            <tr>
+                <td>grupo3@gmail.com</td>
+                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
+                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
+                    <label for="miCheckbox">Hecho</label></td>
+            </tr>
+
+            <tr>
+                <td>grupo3@gmail.com</td>
+                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
+                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
+                    <label for="miCheckbox">Hecho</label></td>
+            </tr>
+
+
+        </table>
+     
+    </div>
+
+<!--    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que se envíe el formulario normalmente
+    
+            // Obtener el correo electrónico ingresado en el formulario
+            var email = document.getElementById("email").value;
+    
+            // Guardar el correo electrónico en el almacenamiento local
+            localStorage.setItem('email', email);
+    
+            // Redireccionar a la página de consultas pendientes
+            window.location.href = 'consultas_pendientes.html';
+        });
+    </script>
+-->
+
+<button class="boton" type="submit">Eliminar las consultas ya finalizadas</button> <!--confirmar, CTA-->
+  
+<!-- Footer -->
+    <footer>
+        <div class="footer-text">
+            Grado en Tecnologías Interactivas © 2024
+        </div>
+    </footer>
+    
+</body>
+</html>
