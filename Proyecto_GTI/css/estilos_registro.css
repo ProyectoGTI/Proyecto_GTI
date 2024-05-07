@@ -1,0 +1,123 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    font-family: 'Monsterrat', sans-serif;
+    margin: 80px;
+  
+    min-height: 100vh;
+}
+
+
+.titulo {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.texto{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px;
+    margin-bottom: 80px;
+}
+
+
+.search-btn {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-btn img {
+    width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+}
+
+section {
+    padding: 20px;
+    background-color: #C6FFD0;
+}
+
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #66DF8F;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*dropdown*/
+
+.dropdown {
+    position: relative;
+    border: solid 1px black;
+    background-color: white;
+}
+
+.dropdown-content {
+    display: none;
+
+    position: fixed; /* Cambiado a posición fija */
+    top: 50px; /* Ajusta según sea necesario */
+    right: 0;
+    left: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-left .dropdown-content {
+    right: auto;
+    left: 0;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+

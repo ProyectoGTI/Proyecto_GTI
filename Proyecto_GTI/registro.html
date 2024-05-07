@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos_registro.css">
+
+    <!--fuente para el título-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!--fuente para el texto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Logo -->
+        <img class="logo" src="assets/images/logoGTI.svg" alt="Logo GTI" id="logo"/>
+
+          <!-- Actualizar página al clicar el logo -->
+    <script src="js/logo_refresh.js"></script> <!-- NO DEBERÍA RECARGAR, DEBE HABER UN LINK A LA LANDING PAGE -->
+
+    </header>
+    
+    <!--contenido de la página-->
+
+    <div class="container"> <!--cajas con valores a introducir-->
+
+        <!--título-->
+      <h1 class="titulo">Regístrese</h1> 
+
+      <!--cajas con valores por introducir-->
+      <form class="texto">
+        <label for="nombre">Ingrese su nombre:</label>
+        <input type="nombre" id="nombre" placeholder="Nombre">
+        <label for="apellidos">Ingrese su apellido:</label>
+        <input type="apellidos" id="apellidos" placeholder="Apellidos">
+        <label for="nombre_de_usuario">Ingrese un nombre de usuario:</label>
+        <input type="nombre_de_usuario" id="nombre_de_usuario" placeholder="Nombre de usuario">
+        <label for="email">Introduzca su correo electrónico</label>
+        <input type="email" id="email" placeholder="Ingresa tu correo electrónico">
+        <label for="password">Introduzca su contraseña</label>
+        <input type="password" id="password" placeholder="Ingresa tu contraseña">
+        <label for="repetir_password">Confirme su contraseña:</label>
+        <input type="repetir_password" id="repetir_password" placeholder="Repita su contraseña">
+
+        <button type="submit">Confirmar</button> <!--confirmar, CTA-->
+        
+      </form>
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-text">
+            Grado en Tecnologías Interactivas © 2024
+        </div>
+    </footer>
+    
+</body>
+</html>

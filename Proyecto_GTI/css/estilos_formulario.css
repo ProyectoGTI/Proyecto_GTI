@@ -1,0 +1,175 @@
+*{
+    margin: 0px;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body{
+    font-family: 'Monsterrat', sans-serif;
+    margin: 80px;
+  
+    min-height: 100vh;
+}
+
+
+.titulo {
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.texto{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px;
+    margin-bottom: 80px;
+    
+}
+
+.email{
+    font-size: 20px;
+}
+.desplegable select{
+
+    width: 100%; /* Ajusta el ancho del desplegable al 100% del contenedor */
+    padding: 10px; /* Ajusta el relleno interno del desplegable */
+    font-size: 20px;
+    border-radius: 8px; /* Establece el radio de los bordes para que estén redondeados */
+    border-color: #888;
+}
+
+.email-input{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.escribir-textarea{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.confirmar{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+.consulta{
+    font-size: 20px;
+}
+
+.escribir{
+    font-size: 20px;
+}
+.search-btn {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.search-btn img {
+    width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: auto;
+}
+
+section {
+    padding: 20px;
+    background-color: #C6FFD0;
+}
+
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #66DF8F;
+}
+  
+/* Estilos para el formulario */
+
+/* Estilo del textarea */
+#escribir {
+    width: 100%; /* Ancho del textarea */
+    height: 200px; /* Altura del textarea */
+    padding: 10px; /* Espaciado interno */
+    font-size: 20px; /* Tamaño de fuente */
+    border: 1px solid #ccc; /* Borde del textarea */
+    border-radius: 5px; /* Radio de borde */
+    resize: vertical; /* Permitir redimensionamiento vertical */
+  }
+  
+  /* Estilo para la etiqueta del textarea */
+  label[for="escribir"] {
+    margin-top: 20px; /* Espacio encima de la etiqueta */
+    display: block; /* Mostrar en bloque */
+
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+/*dropdown*/
+
+.dropdown {
+    position: relative;
+    border: solid 1px black;
+    background-color: white;
+}
+
+.dropdown-content {
+    display: none;
+
+    position: fixed; /* Cambiado a posición fija */
+    top: 50px; /* Ajusta según sea necesario */
+    right: 0;
+    left: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-left .dropdown-content {
+    right: auto;
+    left: 0;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Estilo para el menú desplegable personalizado */
+

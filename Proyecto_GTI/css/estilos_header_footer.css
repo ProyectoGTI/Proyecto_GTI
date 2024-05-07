@@ -1,0 +1,38 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Que ocupe todo ancho de la ventana */
+    height: 75px;
+    background-color: #C6FFD0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    z-index: 1; /* Aumenta el nivel Z del header para que sea visible siempre */
+}
+
+.logo {
+    width: 150px;
+    cursor: pointer; /* Cambia el cursor al dedito al pasarlo por el logo, para indicar que se puede clicar */
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    width: 100%; /* Que ocupe todo ancho de la ventana */
+    height: 150px;
+    background-color: #C6FFD0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribución uniforme */
+}
+
+.footer-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;  /* Centra el texto horizontalmente */
+    align-content: center;
+    font-family: "Montserrat", "sans-serif";
+    font-size: 20px;
+}
