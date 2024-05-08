@@ -11,6 +11,12 @@ body{
     min-height: 100vh;
 }
 
+.container1 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px;  
+    margin-bottom: -110px; 
+}
 
 .titulo {
     font-family: 'Playfair Display', sans-serif;
@@ -19,18 +25,34 @@ body{
     margin-bottom: 20px;
 }
 
-.texto{
+.enunciado {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
-.container {
+
+.texto {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.container2 {
     max-width: 800px;
     margin: 0 auto;
     padding: 60px;
     margin-bottom: 80px;
     
 }
+
+h3{
+    font-family: 'Playfair Display', sans-serif;
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
 
 .email{
     font-size: 20px;
@@ -50,7 +72,7 @@ body{
     width: 100%;
 }
 
-.escribir-textarea{
+textarea{
     font-size: 20px;
     font-family: 'Montserrat', sans-serif;
 }
@@ -62,9 +84,6 @@ body{
     font-size: 20px;
 }
 
-.escribir{
-    font-size: 20px;
-}
 .search-btn {
     cursor: pointer;
     margin-left: 10px;
@@ -81,11 +100,6 @@ section {
 }
 
 
-label {
-    font-size: 20px;
-    margin-bottom: 5px;
- 
-}
 
 
 
@@ -131,6 +145,8 @@ label {
     position: relative; /* Para que el pseudo-elemento se posicione correctamente */
     background-color: white; /* Fondo inicial */
     margin: auto;
+    margin-top: -130px;
+    margin-bottom: 70px;
 }
 
 .button2::before {

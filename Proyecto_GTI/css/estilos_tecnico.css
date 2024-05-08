@@ -18,16 +18,11 @@ body{
     margin-bottom: 20px;
 }
 
-
-
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 60px;
 }
- 
-
-
 
 .search-btn {
     cursor: pointer;
@@ -77,201 +72,44 @@ button:hover {
     accent-color: #FF00A1;
 }
 
-.boton{
-    width: 600px;
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    margin: 40px auto;
-    display: block;
-   
-}
-
-
-
-input, button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    box-sizing: border-box;
-}
-
-button:hover {
-    background-color: #66DF8F;
-}
-
-.dropdown {
-    position: relative;
-    border: solid 1px black;
-    background-color: white;
-}
-.dropdown-content {
-    display: none;
-
-    position: fixed; /* Cambiado a posición fija */
-    top: 50px; /* Ajusta según sea necesario */
-    right: 0;
-    left: 0;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-left .dropdown-content {
-    right: auto;
-    left: 0;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: #333;
-}
-
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
-.nav{
-    background-color:  #82fd97;
-
-    --img1: scale(1);
-    --img2: scale(0);
-}
-
-.nav:has( .dropdown:target ){
-    --img1: scale(0);
-    --img2: scale(1);
-
-    --clip:inset(0 0 0 0);
-
-}
-
-/*menú*/
-.nav__container{
-    width: 90%;
-    margin: 0 auto;
-    height: 70px;
-
-    display: grid;
-    grid-template-columns: max-content max-content;
-    grid-template-areas: "title img";
-    justify-content: space-between;
-    align-items: center;
-
-    overflow: hidden;
-}
-
-.nav__title{
-    color: #fff;
-    grid-area: title;
-}
-
-
-.nav__menu{
-    grid-area: img;
-    position: relative;
-    z-index: 10;
-    border: 10px;
-    transform: var(--img1);
-}
-
-.nav__menu--second{
-    transform: var(--img2);
-}
-
-.nav__icon{
-    width: 30px;
-    display: block;
-}
-
-.dropdown{
-    position: absolute;
-
-    width: 75%;
-    max-width: 300px;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 1em;
-
-    display: grid;
-    align-content:center ;
-    gap: 1rem;
-
-    overflow-y: auto;
-
-
-    clip-path: var(--clip, inset(0 0 100% 100%));
-    transition: clip-path .5s;
-}
-
-.dropdown__list{
-    list-style: none;
-}
-
-.dropdown__link{
-    color: rgb(184, 187, 191);
-    padding: 1em .7em;
-    text-decoration: none;
-    
+.button2 {
+    border: 1px solid #66DF8F;
+    border-radius: 5%;
+    width: 10%;
+    min-width: 150px;
+    height: 30px;
+    margin-left: 1%;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: .6rem;
-
-    position: relative;
-    background-color: var(--bg, transparent);
-    border-radius: 6px;
-}
-
-.dropdown__list:has( :checked ){
-    --rows: 1fr;
-    --rotate: rotate(180deg);
-    --bg: #28303B;
-}
-
-.dropdown__check{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
+    font-family: 'Montserrat', 'sans-serif';
+    font-size: 13px;
     cursor: pointer;
+    overflow: hidden; /* Impedir que el pseudo-elemento se salga del botón */
+    position: relative; /* Para que el pseudo-elemento se posicione correctamente */
+    background-color: white; /* Fondo inicial */
 }
 
-.dropdown__arrow{
-    margin-left: auto;
-    transform: var(--rotate, 0);
-    transition: .2s transform;
+.button2::before {
+    content: "";
+    position: absolute;
+    top: var(--y, 50%);
+    left: var(--x, 50%);
+    width: 0;
+    height: 0;
+    background-color: #e0ffe8; /* Color para el efecto */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s; /* Suavizar la expansión */
 }
 
-.dropdown__content{
-    display: grid;
-    grid-template-rows: var(--rows, 0fr);
-    transition: .3s grid-template-rows;
+.button2:hover::before {
+    width: 320px; /* Tamaño suficiente para cubrir el botón */
+    height: 320px;
 }
 
-.dropdown__sub{
-    overflow: hidden;
-
+.button2:active {
+    background-color: #368951;
+    transform: scale(0.95);
 }
-
-.dropdown__li{
-    width: 85%;
-    list-style: none;
-    margin-left: auto;
-}
-
-.dropdown__anchor{
-    padding: 1em 0;
-    display: block;
-    color: #B6BABE;
-    text-decoration: none;
-}
-

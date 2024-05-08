@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Técnico | Consultas recibidas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="css/estilos_consultas_recibidas.css">
+
+    <!--fuente para el título-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!--fuente para el texto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Logo -->
+        <img class="logo" src="assets/images/logoGTI.svg" alt="Logo GTI" id="logo"/>
+        
+        <div id="boton-menu" class="menu-button">
+          <img src="assets/images/menu-alt-3-svgrepo-com.svg" alt="Abrir Menú">
+      </div>
+
+          <!-- Actualizar página al clicar el logo -->
+      <!--<script src="js/logo_refresh.js"></script>  NO DEBERÍA RECARGAR, DEBE HABER UN LINK A LA LANDING PAGE --> 
+
+    </header>
+
+    <!-- Menú desplegable -->
+    <nav id="menu">
+      <button id="boton-cerrar">&times;</button>
+      <ul>
+          <li><a href="#">Iniciar sesión/Registrarse</a></li>
+          <li><a href="#">Producto</a></li>
+          <li><a href="#">Acerca de Nosotros</a></li>
+          <li><a href="#">Contacto</a></li>
+      </ul>
+  </nav>
+
+    
+    <!--contenido de la página-->
+
+    <div class="container1"> <!--cajas con valores a introducir-->
+
+        <!--título-->
+      <h1 class="titulo">Formulario</h1> 
+
+
+    <!--correo electrónico-->
+        <div>   
+        <label class="enunciado">Correo introducido:</label>      
+        <p class="texto"> grupo3@upv.edu.es</p>
+        </div>
+
+     <!--consulta con despegable-->
+        <div>
+        <label class="enunciado">Consulta seleccionada:</label>      
+        <p class="texto">He detectado anomalías en mi sensor</p>
+        </div>
+
+    <!--escribir consulta-->
+        <div>
+        <label class="enunciado">Consulta descrita:</label>      
+        <p class="texto">A lo largo del día, he revisado los valores recibidos, y cada cierto tiempo hay un "pico" donde los valores salen demasiado altos y al poco tiempo vuelven a la normalidad.</p>
+        </div>
+
+      
+    </div>
+
+    <div class="container2">
+        <h3 class="escribir" for="escribir">Respuesta:</h3>
+        <textarea class="escribir-textarea" type="escribir" id="escribir" placeholder="Consulta"></textarea>
+    </div>
+
+    <button class="confirmar button2" type="submit"><p class="boton-cta">Confirmar</p></button> <!--confirmar, CTA-->
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-text">
+            Grado en Tecnologías Interactivas © 2024
+        </div>
+    </footer>
+    
+    <script src="js/iniciar_sesion.js"></script>
+
+</body>
+</html>

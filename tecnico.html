@@ -36,11 +36,26 @@
    <header>
     <!-- Logo -->
     <img class="logo" src="assets/images/logoGTI.svg" alt="Logo GTI" id="logo"/>
+    
+    <div id="boton-menu" class="menu-button">
+      <img src="assets/images/menu-alt-3-svgrepo-com.svg" alt="Abrir Menú">
+  </div>
 
       <!-- Actualizar página al clicar el logo -->
-<script src="js/logo_refresh.js"></script> <!-- NO DEBERÍA RECARGAR, DEBE HABER UN LINK A LA LANDING PAGE -->
+  <!--<script src="js/logo_refresh.js"></script>  NO DEBERÍA RECARGAR, DEBE HABER UN LINK A LA LANDING PAGE --> 
 
 </header>
+
+<!-- Menú desplegable -->
+<nav id="menu">
+  <button id="boton-cerrar">&times;</button>
+  <ul>
+      <li><a href="#">Iniciar sesión/Registrarse</a></li>
+      <li><a href="#">Producto</a></li>
+      <li><a href="#">Acerca de Nosotros</a></li>
+      <li><a href="#">Contacto</a></li>
+  </ul>
+</nav>
 
 
     <!--contenido de la página-->
@@ -119,7 +134,7 @@
     </script>
 -->
 
-<button class="boton" type="submit">Eliminar las consultas ya finalizadas</button> <!--confirmar, CTA-->
+<button class="button2" type="submit">Eliminar las consultas ya finalizadas</button> <!--confirmar, CTA-->
   
 <!-- Footer -->
     <footer>
@@ -127,6 +142,8 @@
             Grado en Tecnologías Interactivas © 2024
         </div>
     </footer>
+
+    <script src="js/iniciar_sesion.js"></script>
     
 </body>
 </html>
