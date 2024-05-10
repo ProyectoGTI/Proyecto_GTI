@@ -43,17 +43,25 @@ header {
 }
 
 #boton-cerrar {
-    width: 50px;
+    width: 10%;
     position: absolute;
     top: 10px;
-    right: 30px; /* Ajusta la posición del botón cerrar */
+    right: 10px; /* Ajusta la posición del botón cerrar */
     background-color: transparent;
     border: none;
     color: black;
-    font-size: 50px;
+    font-size: 30px;
     cursor: pointer;
     padding: 0 5px; /* Reducir el espacio alrededor del texto */
+    margin: 15px;
 }
+
+#boton-cerrar:hover {
+    background-color:#FF00A1;; /* Cambiado el color de fondo al pasar el cursor */
+    color: white; /* Cambiado el color del texto al pasar el cursor */
+    border-radius: 10px; /* Cambia el radio al pasar el cursor por encima */
+}
+
 #menu {
     position: fixed;
     right: -310px;
@@ -104,7 +112,7 @@ a {
 }
 
 a:hover {
-    background-color: #66DF8F; /* Cambiado el color de fondo al pasar el cursor */
+    background-color: #FF00A1; /* Cambiado el color de fondo al pasar el cursor */
     color: white; /* Cambiado el color del texto al pasar el cursor */
     border-radius: 10px; /* Cambia el radio al pasar el cursor por encima */
 }
@@ -116,7 +124,7 @@ footer {
     left: 0;
     width: 100%; /* Que ocupe todo ancho de la ventana */
     height: 150px;
-    background-color: #C6FFD0;
+    background-color: #66DF8F;
     display: flex;
     align-items: center;
     justify-content: space-between; /* Distribución uniforme */
@@ -130,5 +138,5 @@ footer {
     align-content: center;
     font-family: "Montserrat", "sans-serif";
     font-size: 20px;
-    color: white;
+    color:white;
 }
