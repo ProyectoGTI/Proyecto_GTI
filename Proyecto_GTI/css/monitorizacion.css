@@ -1,0 +1,391 @@
+/* CSS */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0; 
+}
+body {
+    font-family: "Montserrat", "sans-serif";
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinea los elementos horizontalmente al centro */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Que ocupe todo ancho de la ventana */
+    height: 75px;
+    background-color: #C6FFD0;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    z-index: 1; /* Aumenta el nivel Z del header para que sea visible siempre */
+}
+.logo {
+    width: 150px;
+    cursor: pointer; /* Cambia el cursor al dedito al pasarlo por el logo, para indicar que se puede clicar */
+}
+
+
+#boton-cerrar {
+    width: 10%;
+    position: absolute;
+    top: 10px;
+    right: 10px; /* Ajusta la posición del botón cerrar */
+    background-color: transparent;
+    border: none;
+    color: black;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 0 5px; /* Reducir el espacio alrededor del texto */
+    margin: 15px;
+}
+#boton-cerrar:hover {
+    background-color:#FF00A1;; /* Cambiado el color de fondo al pasar el cursor */
+    color: white; /* Cambiado el color del texto al pasar el cursor */
+    border-radius: 10px; /* Cambia el radio al pasar el cursor por encima */
+}
+
+#menu {
+    position: fixed;
+    right: -310px;
+    top: 0;
+    width: 310px;
+    height: 100%;
+    background-color: white;
+    color: black;
+    
+    z-index: 1000;
+    display: flex;
+    flex-direction: column; /* Cambia la dirección del flex a columna */
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px 0 0 10px; /* Añade bordes redondeados */
+}
+
+.menu-content {
+    flex-grow: 1; /* Hace que el contenido del menú ocupe el espacio disponible */
+}
+
+h1, h2, h3, h4 {
+    font-family: "Playfair Display", sans-serif; /* Cambia "TuFuente" por el nombre de la fuente que desees utilizar */
+}
+
+/* Estilos de texto específicos para cada nivel de encabezado */
+h1 {
+    font-size: 60px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Ajusta el margen inferior del título */
+    text-align: center;
+}
+
+h2 {
+    font-size: 46px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Ajusta el margen inferior del título */
+    text-align: center;
+}
+
+h3 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Ajusta el margen inferior del título */
+    text-align: center;
+}
+
+p{
+    margin: 20px 10px 0 10px;
+}
+
+ul {
+    padding: 0;
+    margin: 20px 20px; /* Ajusta la separación desde arriba */
+    width: calc(100% - 40px); /* Ajusta el ancho de la lista restando el doble del margen de los lados */
+}
+
+
+li {    
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+a {
+    display: block;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    
+}
+
+a:hover {
+    background-color: #FF00A1;/* Cambiado el color de fondo al pasar el cursor */
+    color: white; /* Cambiado el color del texto al pasar el cursor */
+    border-radius: 10px; /* Cambia el radio al pasar el cursor por encima */
+}
+
+/* Ajustes adicionales para la presentación */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 100px; /* Ajusta el margen superior */
+}
+
+.section {
+    width: 45%;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+label {
+    font-size: 20px;
+    margin-bottom: 5px;
+    
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+}
+
+
+button {
+    width: 50%;
+    font-family: "Montserrat", sans-serif;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #FF00A1; /* Cambiado el color de fondo al pasar el cursor */
+    color: white; /* Cambiado el color del texto al pasar el cursor */
+    border-radius: 10px; /* Cambia el radio al pasar el cursor por encima */
+}
+.menu-button {
+    position: fixed;
+    width: 50px;
+    right: 0px;
+    padding: 10px 20px;   
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    z-index: 999;
+    background: none;
+    padding: 0;
+    display: flex; /* Usa flexbox */
+    justify-content: flex-end; /* Alinea el contenido a la derecha */
+    align-items: center; /* Centra verticalmente el contenido */
+    width: 50px; /* Ocupa todo el ancho disponible */
+    text-align: right; /* Alinea el texto a la derecha */
+    
+}
+
+.menu-button img {
+    width: 60px;
+    height: auto;
+    margin-right: 5px; /* Margen derecho para separar la imagen del texto */
+}
+
+select {
+    width: 50%;
+    padding: 5px; /* Reducir el padding */
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px; /* Reducir el tamaño del texto */
+}   
+
+/* Estilos para los inputs de alertas mínimas y máximas */
+.section input {
+    width: 10%; 
+    padding: 0px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    margin-left: 0px;
+}
+
+.section label {
+    font-size: 20px;
+    margin-bottom: 5px;
+    display: inline-block;
+    width: 10%;
+    text-align: right; 
+    margin-right: 10%; 
+}
+
+.section label.selector {
+    font-size: 20px;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    width: 10%; 
+    text-align: right; 
+    margin-right: 5%;
+} 
+ 
+/* Estilos para la tabla */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0; 
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid;
+}
+
+th {
+    background-color: #38BF66; 
+    color: #333; 
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+footer {
+    width: 100%; 
+    height: 50px;
+    background-color: #C6FFD0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.footer-text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    font-family: "Montserrat", "sans-serif";
+    font-size: 20px;
+}
+
+
+
+.user-info span {
+        margin-left: 5px;
+}
+
+.user-info {
+    padding: 10px 20px;
+    background-color: #C6FFD0;
+    color: black;
+    margin-top: 2%; /* Alinea la información del usuario en la parte inferior */
+    width: 100%; /* Asegura que la información del usuario ocupe todo el ancho */
+    text-align: left; /* Centra el texto horizontalmente */
+}
+
+@media screen and (max-width: 500px) {
+    body {
+        font-size: 13px;
+
+    }
+
+    /* Estilos de texto específicos para cada nivel de encabezado */
+h1 {
+    font-size: 32px;
+
+}
+
+h2 {
+    font-size: 20px;
+
+}
+
+h3 {
+    font-size: 15px;
+
+}
+#menu {
+    position: fixed;
+    right: -225px;
+    width: 225px;
+
+    
+}
+
+    /* Ajustes para las secciones */
+    .section {
+        width: 90%; /* Ajustar el ancho de las secciones */
+        margin-left: 5%; /* Centrar las secciones */
+        margin-right: 5%;
+    }
+
+    .section label.selector {
+        margin-right: 15%;
+    }   
+
+    /* Ajustes para los inputs de alertas mínimas y máximas */
+    .section input[type="number"] {
+        width: 40%; 
+    }
+
+input, button {
+
+    font-size: 13px;
+}
+
+label {
+    font-size: 13px;    
+    
+}
+select {
+    width: 50%;
+}
+.footer-text {
+
+    font-size: 13px;
+}
+
+@media screen and (max-width: 376px) {
+    /* Ajustes para el encabezado */
+
+    #boton-menu {
+        padding: 5px; 
+    }
+
+    /* Ajustes para el menú desplegable */
+    #menu {
+        width: 225px; /* Reducir el ancho del menú */
+    }
+
+
+
+    /* Ajustes para el footer */
+    footer {
+        height: 100px; /* Reducir la altura del footer */
+    }
+
+    .footer-text {
+        font-size: 16px; /* Reducir el tamaño del texto del footer */
+    }
+}
+}

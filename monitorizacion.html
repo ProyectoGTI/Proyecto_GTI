@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/monitorizacion.css">
+    <!--fuente para el título-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!--fuente para el texto-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos CSS */
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Logo -->
+        <img class="logo" src=" images/logoGTI.svg" alt="Logo GTI" id="logo"/>
+        <!-- Botón para abrir el menú -->
+        <div id="boton-menu" class="menu-button">
+            <img src="images/user-circle-svgrepo-com.svg" alt="Abrir Menú">
+        </div>
+    </header>
+    
+<!-- Menú desplegable -->
+<nav id="menu">
+    <button id="boton-cerrar">&times;</button>
+        <span id="nombre-usuario"></span>
+    <ul>
+        <li><a href="#">Perfil</a></li>
+        <li><a href="#">Página de monitorizacion</a></li>
+        <li><a href="#">Vincular Prodcuto</a></li>
+        <li><a href="#">Contacto</a></li>
+        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="iniciar_sesion.html">Cerrar sesión</a></li>
+    </ul>
+</nav>
+
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Sección 1: Tres Desplegables -->
+        <div class="section">
+            <h2>Monitoreo de Cultivos</h2>
+            <label class="selector">Huerto:</label>
+            <select id="desplegable1">
+                <option value="">Selecciona una opción</option>
+                <option value="opcion1">Huerto 1</option>
+                <option value="opcion2">Huerto 2</option>
+                <option value="opcion3">Huerto 3</option>
+            </select>
+            <br>
+            <label class="selector">Sensor:</label>
+            <select id="desplegable2" disabled>
+                <option value="">Selecciona una opción</option>
+                <option value="opcion1">Sensor 1</option>
+                <option value="opcion2">Sensor 2</option>
+                <option value="opcion3">Sensor 3</option>
+            </select>
+            <br>
+            <label class="selector">Fecha:</label>
+            <select id="desplegable3" disabled>
+                <option value="">Selecciona una opción</option>
+                <option value="opcion1">Tiempo Real</option>
+                <option value="opcion2">1 dia</option>
+                <option value="opcion3">7 dias</option>
+                <option value="opcion3">30 dias</option>
+            </select>
+            <button id="registroButton" type="button" onclick="window.location.href = 'vincular_sensor.html';">Añadir dispositivo</button>
+        </div>
+        
+        <!-- Sección 2: Alertas Mínimas y Máximas -->
+        <div class="section">
+            <h2>Alertas Mínimas y Máximas</h2>
+            <div class="tabla-datos">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th>Mínimo</th>
+                            <th>Máximo </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Temperatura</td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                        </tr>
+                        <tr>
+                            <td>Humedad</td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                        </tr>
+                        <tr>
+                            <td>pH</td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                        </tr>
+                        <tr>
+                            <td>Salinidad</td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                        </tr>
+                        <tr>
+                            <td>Luminosidad</td>
+                            <td><input type="number"></td>
+                            <td><input type="number"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+        </div>
+        <!-- Sección 3: Foto -->
+        <div class="section">
+            <h2>Gráfica</h2>
+            <img src="images/descarga.png" alt="Foto del Cultivo">
+        </div>
+        
+        <!-- Sección 4: Tabla -->
+        <div class="section">
+            <h2>Datos del Cultivo</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parámetro</th>
+                            <th></th>
+                            <th>Dato 3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Temperatura</td>
+                            <td>Valor 2</td>
+                            <td>Valor 3</td>
+                        </tr>
+                        <tr>
+                            <td>Humedad</td>
+                            <td>Valor 2</td>
+                            <td>Valor 3</td>
+                        </tr>
+                        <tr>
+                            <td>pH</td>
+                            <td>Valor 2</td>
+                            <td>Valor 3</td>
+                        </tr>
+                        <tr>
+                            <td>Salinidad</td>
+                            <td>Valor 2</td>
+                            <td>Valor 3</td>
+                        </tr>
+                        <tr>
+                            <td>Luminosidad</td>
+                            <td>Valor 2</td>
+                            <td>Valor 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+            <!-- Footer -->
+    <footer>
+        <div class="footer-text">
+            Grado en Tecnologías Interactivas © 2024
+        </div>
+    </footer>
+
+    <script src="js/monitorizacion.js">
+
+    </script>
+
+</body>
+</html>

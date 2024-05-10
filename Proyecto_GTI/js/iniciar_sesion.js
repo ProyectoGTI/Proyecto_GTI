@@ -13,3 +13,31 @@ botonMenu.addEventListener('click', function() {
     location.reload();
 });
 
+
+document.addEventListener("DOMContentLoaded", function() {
+  const form = document.getElementById("loginForm");
+
+  form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      fetch("data/usuarios.json")
+      .then(response => response.json())
+      .then(data => {
+          const usuarios = data.usuarios; // Accede al arreglo de usuarios dentro del objeto JSON
+          const user = usuarios.find(user => user.email === email && user.password === password);
+          if (user) {
+              // Redirigir al usuario a otra página
+              window.location.href = "monitorizacion.html";
+          } else {
+              alert("Correo electrónico o contraseña incorrectos");
+          }
+      })
+      .catch(error => console.error("Error al cargar los usuarios:", error));
+  });
+});
+
+
+
