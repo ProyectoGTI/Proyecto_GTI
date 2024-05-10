@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administración de Usuarios</title>
+    <style>
+        /* Estilos CSS */
+        /* Estilos para la tabla */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        /* Estilos para los campos de entrada */
+        input[type="text"], select {
+            width: calc(100% - 16px); /* Ajuste para tener en cuenta el padding */
+            padding: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            max-width: 50%;
+        }
+        select {
+            max-width: 25%;
+        }
+        /* Estilos para el pop-up */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border: 1px solid #888;
+            z-index: 1000;
+            color: white;
+            text-align: center;
+        }
+        /* Estilos para el buscador */
+        #buscador {
+            width: 50%;
+            margin-bottom: 10px;
+        }
+        /* Estilos para vista móvil */
+        @media only screen and (max-width: 600px) {
+            input[type="text"], select {
+                width: calc(100% - 16px);
+                max-width: 100%;
+            }
+        }
+        /* Estilos para los detalles de usuario */
+        #detallesUsuario {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 40%;
+            margin-left: 5%; /* Ajuste para alinear a la izquierda */
+            text-align: left;
+        }
+        #detallesUsuario p {
+            margin-bottom: 10px;
+        }
+        .input-container {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        .input-container div {
+            display: inline-block;
+            width: 100%;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Administración de Usuarios</h1>
+
+<!-- Buscador de usuarios -->
+<div style="width: 50%; float: left;">
+    <input type="text" id="buscador" oninput="buscarUsuario()" placeholder="Buscar Usuario...">
+</div>
+<br style="clear:both;"><br>
+
+<!-- Tabla de usuarios -->
+<table id="tablaUsuarios">
+    <tr>
+        <th>Username</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+    </tr>
+    <!-- Aquí se cargarán dinámicamente los usuarios -->
+</table>
+
+<!-- Detalles de usuario -->
+<div id="detallesUsuario" style="display: none;">
+    <h2>Detalles de Usuario</h2>
+    <div class="input-container">
+        <div><strong>Username:</strong> <input type="text" id="usernameUsuario" readonly></div>
+    </div>
+    <div class="input-container">
+        <div><strong>Nombre:</strong> <input type="text" id="nombreUsuario" readonly></div>
+    </div>
+    <div class="input-container">
+        <div><strong>Correo:</strong> <input type="text" id="correoUsuario" readonly></div>
+    </div>
+    <div class="input-container">
+        <div><strong>Rol:</strong>
+            <select id="rolUsuario" disabled>
+                <option value="Admin">Admin</option>
+                <option value="Usuario">Usuario</option>
+                <option value="Técnico">Técnico</option>
+            </select>
+        </div>
+    </div>
+    <p><strong>Estado:</strong> <span id="estadoUsuario"></span></p>
+    <p><strong>Fecha de Registro:</strong> <span id="fechaRegistroUsuario"></span></p>
+    <p><strong>Última Conexión:</strong> <span id="ultimaConexionUsuario"></span></p>
+    <div>
+        <button onclick="eliminarUsuario()" style="float: right;">Eliminar Usuario</button>
+        <button onclick="habilitarEdicion()" style="float: right; margin-right: 10px;">Editar Información</button>
+        <button onclick="guardarCambios()" style="display:none; float: right;">Guardar Cambios</button>
+    </div>
+</div>
+
+<!-- Pop-up de confirmación para eliminar usuario -->
+<div id="popupEliminar" class="popup">
+    <p>¿Seguro que quieres eliminar el usuario?</p>
+    <button onclick="eliminarUsuarioConfirmado()">Sí</button>
+    <button onclick="cerrarPopup()">Cancelar</button>
+</div>
+
+<!-- Pop-up de confirmación de guardado -->
+<div id="popupGuardado" class="popup">
+    <p>Guardado correctamente</p>
+</div>
+
+<!-- Pop-up de correo inválido -->
+<div id="popupCorreoInvalido" class="popup" style="background-color: rgba(255, 0, 0, 0.5);">
+    <p>No es un correo válido</p>
+</div>
+
+<script>
+    // Datos de ejemplo de usuarios (puedes reemplazarlos con tus propios datos)
+    var usuarios = [
+        { username: "juanperez", nombre: "Juan Pérez", correo: "juan@example.com", rol: "Admin", estado: "Activo", fechaRegistro: "01/05/2024", ultimaConexion: "05/05/2024" },
+        { username: "mariagarcia", nombre: "María García", correo: "maria@example.com", rol: "Usuario", estado: "Inactivo", fechaRegistro: "02/05/2024", ultimaConexion: "03/05/2024" },
+        { username: "pedromartinez", nombre: "Pedro Martínez", correo: "pedro@example.com", rol: "Usuario", estado: "Activo", fechaRegistro: "03/05/2024", ultimaConexion: "04/05/2024" },
+        { username: "laurasanchez", nombre: "Laura Sánchez", correo: "laura@example.com", rol: "Usuario", estado: "Activo", fechaRegistro: "04/05/2024", ultimaConexion: "05/05/2024" },
+        { username: "carloslopez", nombre: "Carlos López", correo: "carlos@example.com", rol: "Técnico", estado: "Activo", fechaRegistro: "05/05/2024", ultimaConexion: "06/05/2024" }
+    ];
+
+    var usuarioActualIndex; // Variable para guardar el índice del usuario actualmente mostrado
+
+    // Función para mostrar usuarios en la tabla
+    function mostrarUsuarios() {
+        var tabla = document.getElementById("tablaUsuarios");
+        tabla.innerHTML = "<tr><th>Username</th><th>Nombre</th><th>Correo</th><th>Rol</th><th>Acciones</th></tr>";
+
+        for (var i = 0; i < usuarios.length; i++) {
+            var usuario = usuarios[i];
+            var row = "<tr>";
+            row += "<td>" + usuario.username + "</td>";
+            row += "<td>" + usuario.nombre + "</td>";
+            row += "<td>" + usuario.correo + "</td>";
+            row += "<td>" + usuario.rol + "</td>";
+            row += "<td><button onclick='mostrarDetalles(" + i + ")'>Ver Detalles</button></td>";
+            row += "</tr>";
+            tabla.innerHTML += row;
+        }
+    }
+
+    // Función para mostrar detalles de un usuario
+    function mostrarDetalles(index) {
+        if (usuarioActualIndex === index) {
+            ocultarDetalles();
+            usuarioActualIndex = undefined;
+            return;
+        }
+        usuarioActualIndex = index;
+        var usuario = usuarios[index];
+        document.getElementById("usernameUsuario").value = usuario.username;
+        document.getElementById("nombreUsuario").value = usuario.nombre;
+        document.getElementById("correoUsuario").value = usuario.correo;
+        document.getElementById("rolUsuario").value = usuario.rol;
+        document.getElementById("estadoUsuario").innerText = usuario.estado;
+        document.getElementById("fechaRegistroUsuario").innerText = usuario.fechaRegistro;
+        document.getElementById("ultimaConexionUsuario").innerText = usuario.ultimaConexion;
+        document.getElementById("detallesUsuario").style.display = "block";
+        // Habilitar botón de edición y eliminación
+        document.querySelector("#detallesUsuario button:nth-of-type(1)").style.display = "block";
+        document.querySelector("#detallesUsuario button:nth-of-type(2)").style.display = "block";
+        document.querySelector("#detallesUsuario button:nth-of-type(3)").style.display = "none"; // Ocultar botón de guardar cambios
+        // Deshabilitar campos de entrada
+        var inputs = document.querySelectorAll("#detallesUsuario input, #detallesUsuario select");
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].readOnly = true;
+            inputs[i].disabled = true;
+        }
+    }
+
+    // Función para habilitar edición de campos
+    function habilitarEdicion() {
+        // Mostrar botón de guardar cambios
+        document.querySelector("#detallesUsuario button:nth-of-type(3)").style.display = "block";
+        // Ocultar botón de edición y eliminación
+        document.querySelector("#detallesUsuario button:nth-of-type(2)").style.display = "none";
+        document.querySelector("#detallesUsuario button:nth-of-type(1)").style.display = "none";
+        // Habilitar campos de entrada
+        var inputs = document.querySelectorAll("#detallesUsuario input, #detallesUsuario select");
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].readOnly = false;
+            inputs[i].disabled = false;
+        }
+    }
+
+    // Función para guardar los cambios editados
+    function guardarCambios() {
+        var usuario = usuarios[usuarioActualIndex];
+        var nuevoCorreo = document.getElementById("correoUsuario").value;
+        if (esCorreoValido(nuevoCorreo)) {
+            usuario.username = document.getElementById("usernameUsuario").value;
+            usuario.nombre = document.getElementById("nombreUsuario").value;
+            usuario.correo = nuevoCorreo;
+            usuario.rol = document.getElementById("rolUsuario").value;
+            mostrarUsuarios();
+            ocultarDetalles();
+            mostrarPopupGuardado();
+        } else {
+            mostrarPopupCorreoInvalido();
+        }
+    }
+
+    // Función para verificar si un correo electrónico es válido
+    function esCorreoValido(correo) {
+        // Expresión regular para validar un correo electrónico
+        var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return regex.test(correo);
+    }
+
+    // Función para ocultar detalles del usuario
+    function ocultarDetalles() {
+        document.getElementById("detallesUsuario").style.display = "none";
+    }
+
+    // Función para mostrar el pop-up de guardado correcto
+    function mostrarPopupGuardado() {
+        var popup = document.getElementById("popupGuardado");
+        popup.style.display = "block";
+        setTimeout(function() {
+            popup.style.display = "none";
+            ocultarDetalles(); // Ocultar detalles después de mostrar el pop-up
+        }, 2000); // Ocultar el pop-up después de 2 segundos
+    }
+
+    // Función para mostrar el pop-up de correo inválido
+    function mostrarPopupCorreoInvalido() {
+        var popup = document.getElementById("popupCorreoInvalido");
+        popup.style.display = "block";
+        setTimeout(function() {
+            popup.style.display = "none";
+        }, 2000); // Ocultar el pop-up después de 2 segundos
+    }
+
+    // Función para eliminar un usuario
+    function eliminarUsuario() {
+        var popup = document.getElementById("popupEliminar");
+        popup.style.display = "block";
+    }
+
+    // Función para eliminar un usuario después de confirmar
+    function eliminarUsuarioConfirmado() {
+        var index = usuarioActualIndex;
+        usuarios.splice(index, 1);
+        mostrarUsuarios();
+        cerrarPopup();
+    }
+
+    // Función para cerrar el pop-up
+    function cerrarPopup() {
+        document.getElementById("popupEliminar").style.display = "none";
+    }
+
+    // Función para buscar usuarios por username
+    function buscarUsuario() {
+        var input = document.getElementById("buscador").value.toLowerCase();
+        var filtrados = usuarios.filter(function(usuario) {
+            return usuario.username.toLowerCase().includes(input);
+        });
+        if (input === "") {
+            mostrarUsuarios(); // Mostrar todos los usuarios si el campo de búsqueda está vacío
+        } else {
+            mostrarUsuariosFiltrados(filtrados);
+        }
+    }
+
+    // Función para mostrar usuarios filtrados en la tabla
+    function mostrarUsuariosFiltrados(usuariosFiltrados) {
+        var tabla = document.getElementById("tablaUsuarios");
+        tabla.innerHTML = "<tr><th>Username</th><th>Nombre</th><th>Correo</th><th>Rol</th><th>Acciones</th></tr>";
+
+        for (var i = 0; i < usuariosFiltrados.length; i++) {
+            var usuario = usuariosFiltrados[i];
+            var row = "<tr>";
+            row += "<td>" + usuario.username + "</td>";
+            row += "<td>" + usuario.nombre + "</td>";
+            row += "<td>" + usuario.correo + "</td>";
+            row += "<td>" + usuario.rol + "</td>";
+            row += "<td><button onclick='mostrarDetalles(" + usuarios.indexOf(usuario) + ")'>Ver Detalles</button></td>";
+            row += "</tr>";
+            tabla.innerHTML += row;
+        }
+    }
+
+    // Mostrar usuarios al cargar la página
+    mostrarUsuarios();
+</script>
+
+</body>
+</html>
