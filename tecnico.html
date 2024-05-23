@@ -4,31 +4,13 @@
     <meta charset="UTF-8">
     <title>Tecnico | Consultas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="css/header_footer_tecnico.css">
     <link rel="stylesheet" type="text/css" href="css/estilos_tecnico.css">
 
-    <!--fuente para el título-->
+    <!--fuente-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <!--fuente para el texto-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-
-        th, td {
-            padding: 5px;
-        }
-        td{
-            text-align: center;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -38,8 +20,8 @@
     <img class="logo" src="assets/images/logoGTI.svg" alt="Logo GTI" id="logo"/>
     
     <div id="boton-menu" class="menu-button">
-        <img src="assets/imagenes/menu-alt-3-svgrepo-com (1).svg" alt="Abrir Menú">
-  </div>
+        <img src="assets/images/menu-alt-3-svgrepo-com (1).svg" alt="Abrir Menú">
+    </div>
 
       <!-- Actualizar página al clicar el logo -->
   <!--<script src="js/logo_refresh.js"></script>  NO DEBERÍA RECARGAR, DEBE HABER UN LINK A LA LANDING PAGE --> 
@@ -48,79 +30,83 @@
 
 <!-- Menú desplegable -->
 <nav id="menu">
-  <button id="boton-cerrar">&times;</button>
-  <ul>
-      <li><a href="#">Iniciar sesión/Registrarse</a></li>
-      <li><a href="#">Producto</a></li>
-      <li><a href="#">Acerca de Nosotros</a></li>
-      <li><a href="#">Contacto</a></li>
-      <li><a href="#">Funciones de técnico</a></li>
-  </ul>
+    <button id="boton-cerrar">&times;</button>
+        <span id="nombre-usuario"></span>
+    <ul>
+
+        <li><a href="monitorizacion.html">Página de monitorizacion</a></li>
+        <li><a href="vinculacion.html">Vincular producto</a></li>
+        <li><a href="index.html">Producto</a></li>
+        <li><a href="perfil.html">Perfil</a></li>
+        <li><a href="formulario.html">Contacto</a></li>
+        <li><a href="sobre_nosotros.html">Sobre nosotros</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+
+        <li><a href="tecnico.html">Consultas pendientes</a></li>
+        <li><a href="iniciar_sesion.html">Cerrar sesión</a></li>
+
+    </ul>
 </nav>
-
-
     <!--contenido de la página-->
 
     <div class="container"> <!--cajas con valores a introducir-->
 
         <h1 class="titulo">Consultas pendientes</h1> 
 
-        <table class="tabla" style="width: 100%;">
-            <tr>
-                <th>USUARIO</th>
-                <th>FORMULARIO</th>
-                <th>ESTADO DE LA CONSULTA</th>
-            </tr>
+        <table class="tabla" style="width: 100%;" id="consultaTable">
+            <thead>
+                <tr>
+                    <th class="titulostabla">USUARIO</th>
+                    <th class="titulostabla">FORMULARIO</th>
+                    <th class="titulostabla">ESTADO DE LA CONSULTA</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    <td class="textousuarios">grupo3@gmail.com</td>
+                    <td><a href="consultas_recibidas.html"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario recibido"></a></td>
+                    <td><input type="checkbox" class="delete-checkbox Checkbox"></td>
+                </tr>
 
-            <tr>
-                <td>grupo3@gmail.com</td>
-                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
-                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
-                    <label for="miCheckbox">Hecho</label></td>
-            </tr>
+                <tr>
+                    <td class="textousuarios">grupo4@gmail.com</td>
+                    <td><a href="consultas_recibidas.html"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario recibido"></a></td>
+                    <td><input type="checkbox" class="delete-checkbox Checkbox"></td>
+                </tr>
 
-            <tr>
-                <td>grupo3@gmail.com</td>
-                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
-                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
-                    <label for="miCheckbox">Hecho</label></td>
-            </tr>
+                <tr>
+                    <td class="textousuarios">grupo5@gmail.com</td>
+                    <td><a href="consultas_recibidas.html"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario recibido"></a></td>
+                    <td><input type="checkbox" class="delete-checkbox Checkbox"></td>
+                </tr>
 
-            <tr>
-                <td>grupo3@gmail.com</td>
-                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
-                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
-                    <label for="miCheckbox">Hecho</label></td>
-            </tr>
+                <tr>
+                    <td class="textousuarios">grupo6@gmail.com</td>
+                    <td><a href="consultas_recibidas.html"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario recibido"></a></td>
+                    <td><input type="checkbox" class="delete-checkbox Checkbox"></td>
+                </tr>
 
-            <tr>
-                <td>grupo3@gmail.com</td>
-                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
-                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
-                    <label for="miCheckbox">Hecho</label></td>
-            </tr>
+                <tr>
+                    <td class="textousuarios">grupo7@gmail.com</td>
+                    <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></a></td>
+                    <td><input type="checkbox" class="delete-checkbox Checkbox"></td>
+                </tr>
 
-            <tr>
-                <td>grupo3@gmail.com</td>
-                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
-                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
-                    <label for="miCheckbox">Hecho</label></td>
-            </tr>
-
-            <tr>
-                <td>grupo3@gmail.com</td>
-                <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></td>
-                <td><input type="checkbox" class="Checkbox" id="miCheckbox" name="miCheckbox">
-                    <label for="miCheckbox">Hecho</label></td>
-            </tr>
-
-
+                <tr>
+                    <td class="textousuarios">grupo8@gmail.com</td>
+                    <td><a href="https://www.gandia.upv.es"><img src="assets/icons/link-external-01-svgrepo-com.svg" style="width: 30px;height: 30px;" alt="Formulario"></a></td>
+                    <td><input type="checkbox" class="delete-checkbox Checkbox"></td>
+                </tr>
+            </tbody>
         </table>
+
+        <div class="button-container">
+            <button class="boton" onclick="deleteSelectedRows()">Borrar Seleccionados</button>
+        </div>
      
     </div>
 
-<button class="button2" type="submit">Eliminar las consultas ya finalizadas</button> <!--confirmar, CTA-->
-  
 <!-- Footer -->
     <footer>
         <div class="footer-text">
@@ -128,7 +114,12 @@
         </div>
     </footer>
 
-    <script src="js/iniciar_sesion.js"></script>
-    
+    <!--Javascript-->
+    <script src="js/menu_tecnico.js"></script>
+    <script src="js/script_tecnico.js"></script>
+
 </body>
 </html>
+
+
+

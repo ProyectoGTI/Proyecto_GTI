@@ -1,26 +1,28 @@
-*{
+/* Estilos generales */
+* {
     margin: 0px;
     box-sizing: border-box;
     padding: 0;
 }
 
-body{
-    font-family: 'Monsterrat', sans-serif;
+body {
+    font-family: 'Outfit', sans-serif;
     margin: 80px;
-  
     min-height: 100vh;
+    background-image: url(/assets/images/c57783e2-177c-4094-a447-18d0cc5a122d.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-
 .titulo {
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 60px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.texto{
-    font-family: 'Montserrat', sans-serif;
+.texto {
+    font-family: 'Outfit', sans-serif;
     font-size: 20px;
 }
 
@@ -30,7 +32,6 @@ body{
     padding: 60px;
     margin-bottom: 80px;
 }
-
 
 .search-btn {
     cursor: pointer;
@@ -47,18 +48,25 @@ section {
     background-color: #C6FFD0;
 }
 
-
 label {
     font-size: 14px;
     margin-bottom: 5px;
 }
 
-.boton{
-font-size: 20px;
-font-family: 'Montserrat', sans-serif;
+a:hover{
+    background: white;
 }
 
-input, button {
+.boton {
+    font-size: 20px;
+    font-family: 'Outfit', sans-serif;
+    cursor: pointer;
+    text-align: center;
+    
+}
+
+input,
+button {
     width: 100%;
     height: 40px;
     padding: 10px;
@@ -70,14 +78,31 @@ input, button {
 }
 
 button:hover {
-    background-color: #66DF8F;
+    background-color: #820153;
+    color: white;
 }
 
 
+/* Estilos para pantallas de móvil */
+@media screen and (max-width: 376px) {
+    body {
+        margin: 10px;
+    }
+    
+    .container {
+        padding: 10px;
+        max-width: 100%;
+    }
+    
+    .titulo {
+        font-size: 32px;
+    }
+    
+    .texto {
+        font-size: 13px;
+    }
 
-
-
-
-
-
-
+    .boton{
+        font-size: 13px;
+    }
+}

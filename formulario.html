@@ -4,17 +4,14 @@
     <meta charset="UTF-8">
     <title>Formulario de consultas</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="css/header_footer.css">
+    <link rel="stylesheet" type="text/css" href="css/header_footer_formulario.css">
     <link rel="stylesheet" type="text/css" href="css/estilos_formulario.css">
 
-    <!--fuente para el título-->
+    <!--fuente-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    <!--fuente para el texto-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <!-- Header -->
@@ -23,100 +20,62 @@
         <img class="logo" src="assets/images/logoGTI.svg" alt="Logo GTI" id="logo"/>
         
         <div id="boton-menu" class="menu-button">
-            <img src="assets/imagenes/menu-alt-3-svgrepo-com (1).svg" alt="Abrir Menú">
+            <img src="assets/images/menu-alt-3-svgrepo-com (1).svg" alt="Abrir Menú">
         </div>
-
-          <!-- Actualizar página al clicar el logo -->
-      <!--<script src="js/logo_refresh.js"></script>  NO DEBERÍA RECARGAR, DEBE HABER UN LINK A LA LANDING PAGE --> 
-
     </header>
 
     <!-- Menú desplegable -->
     <nav id="menu">
-      <button id="boton-cerrar">&times;</button>
-      <ul>
-          <li><a href="#">Iniciar sesión/Registrarse</a></li>
-          <li><a href="#">Producto</a></li>
-          <li><a href="#">Acerca de Nosotros</a></li>
-          <li><a href="#">Contacto</a></li>
-      </ul>
-  </nav>
-
+        <button id="boton-cerrar">&times;</button>
+        <div class="user-options">
+            <span class="user" id="nombre-usuario">Usuario</span>
+            <a href="iniciar_sesion.html" class="logout">Cerrar sesión</a>
+        </div>
+        
+        <ul>
+            <li><a href="monitorizacion.html">Página de monitorización</a></li>
+            <li><a href="vinculacion.html">Vincular Producto</a></li>
+            <li><a href="index.html">Producto</a></li>
+            <li><a href="perfil.html">Perfil</a></li>
+            <li><a href="formulario.html">Contacto</a></li>
+            <li><a href="sobre_nosotros.html">Sobre nosotros</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
+    </nav>
     
-    <!--contenido de la página-->
-
-    <div class="container"> <!--cajas con valores a introducir-->
-
-        <!--título-->
-      <h1 class="titulo">Formulario</h1> 
-
-      <!--cajas con valores por introducir-->
-      <form class="texto">
-
-        <div class="correo">
-            <!--correo electrónico-->
-        <label class="email" for="email">Introduzca su correo electrónico:</label>
-
-        <div>
-        <input class="email-input" type="email" id="email" placeholder="Ingresa tu correo electrónico">
-        </div>
-
-        </div>
-        
-
-      <div>
-     <!--consulta con despegable-->
-     <label class="consulta" for="consulta">¿Cuál es su consulta?:
-
-      </label>
-
-      <div class="desplegable">
-     <select id="opciones">
-      <option class="desplegable" value="" disabled selected>Seleccionar</option> <!-- Opción "Elegir" -->
-      <option class="desplegable" value="opcion1">He detectado anomalías en los valores que recibo de mi sensor</option>
-      <option class="desplegable" value="opcion2">No puedo vincular el sensor a la página web</option>
-      <option class="desplegable" value="opcion3">No encuentro valores pasados</option>
-      <option class="desplegable" value="opcion3">Otro</option>
-      </select>
-    
-     <p id="resultado"></p>
-    
-    <script src="script.js"></script>
-     </div>
-        </div>
-      
-
-        <div>
-            <!--escribir consulta-->
-        <label class="escribir" for="escribir">Describa su consulta:</label>
-        <textarea class="escribir-textarea" type="escribir" id="escribir" placeholder="Consulta"></textarea>
-
-        <button class="confirmar button2" type="submit"><p class="boton-cta">Confirmar</p></button> <!--confirmar, CTA-->
-
-        </div>
-        
-        
-        <!-- Después del botón "Confirmar" -->
-<!--<script>
-    document.querySelector('form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Evitar que se envíe el formulario normalmente
-
-        // Obtener el correo electrónico ingresado en el formulario
-        var email = document.getElementById("email").value;
-
-        // Aquí puedes realizar una petición AJAX para guardar la información en tu backend
-        // Por ahora, solo agregaremos la fila en la tabla de consultas pendientes
-        agregarConsulta(email);
-        
-        // Redireccionar a la página de consultas pendientes
-        window.location.href = 'consultas_pendientes.html';
-    });
-</script>
--->
-
-      </form>
+    <!-- Contenido de la página -->
+    <div class="container">
+        <h1 class="titulo">Formulario de consulta</h1>
+        <form class="texto">
+            <div class="correo">
+                <label class="email" for="email">Introduzca su correo electrónico:</label>
+                <div>
+                    <input class="email-input" type="email" id="email" placeholder="Ingresa tu correo electrónico">
+                </div>
+            </div>
+            <div>
+                <label class="consulta" for="consulta">¿Cuál es su consulta?</label>
+                <div class="desplegable">
+                    <select id="opciones">
+                        <option class="desplegable" value="" disabled selected>Seleccionar</option>
+                        <option class="desplegable" value="opcion1">Error en el sensor</option>
+                        <option class="desplegable" value="opcion2">Error en la página</option>
+                        <option class="desplegable" value="opcion3">Error en la cuenta</option>
+                        <option class="desplegable" value="opcion4">Otro (especificar)</option>
+                    </select>
+                    <p id="resultado"></p>
+                </div>
+            </div>
+            <div>
+                <label class="escribir" for="escribir">Describa su consulta:</label>
+                <textarea class="escribir-textarea" type="escribir" id="escribir" placeholder="Consulta"></textarea>
+                
+                <div class="boton-container">
+                    <a href=""><button class="confirmar boton" type="submit"><p class="boton-cta">Confirmar</p></button></a>
+                </div>
+            </div>
+        </form>
     </div>
-
 
     <!-- Footer -->
     <footer>
@@ -125,7 +84,9 @@
         </div>
     </footer>
     
-    <script src="js/iniciar_sesion.js"></script>
+    <!--Javascript-->
+    <script src="js/menu_formulario.js"></script>
+    <script src="js/script_formulario.js"></script>
 
 </body>
 </html>

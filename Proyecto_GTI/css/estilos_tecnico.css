@@ -1,33 +1,36 @@
-*{
+/* Estilos generales */
+* {
     margin: 0;
     box-sizing: border-box;
     padding: 0;
 }
 
-body{
-    font-family: 'Montserrat', sans-serif;
+body {
+    font-family: 'Outfit', sans-serif;
     margin: 80px;
     padding: 0;
 }
 
-
 .titulo {
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 60px;
     text-align: center;
     margin-bottom: 20px;
 }
 
+.titulostabla{
+    font-size: 20px;
+}
 
+.textousuarios{
+    font-size: 20px;
+}
 
 .container {
     max-width: 800px;
     margin: 0 auto;
     padding: 60px;
 }
- 
-
-
 
 .search-btn {
     cursor: pointer;
@@ -35,86 +38,103 @@ body{
 }
 
 .search-btn img {
-    width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+    width: 30px;
     height: auto;
 }
 
-
 section {
     padding: 20px;
-    background-color: #C6FFD0;
+    /*background-color: #820153;*/
 }
-
 
 label {
     font-size: 14px;
     margin-bottom: 5px;
 }
 
-input, button {
-    width: 100%;
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+}
+td {
+    text-align: center;
+}
+
+.tabla {
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+}
+
+.Checkbox {
+    transform: scale(2);
+    accent-color: #820153;
+}
+
+/*estilos del botón*/
+.button-container {
+    margin-top: 10px;
+    text-align: center; /* Centra el texto horizontalmente */
+    font-size: 20px;
+    font-family: 'Outfit', sans-serif; /* Se establece la fuente del botón */
+}
+
+.boton {
+    font-family: 'Outfit', sans-serif; /* Se establece la fuente del botón */
+    font-size: 20px; /* Se establece el tamaño del botón */
+    width: 70%; /* El botón ocupa todo el ancho del contenedor */
     padding: 10px;
-    margin-top: 5px;
+    margin-top: 20px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 3px;
     box-sizing: border-box;
 }
 
+
 button:hover {
-    background-color: #66DF8F;
+    background-color: #820153;
+    color: white;
 }
 
-  /*tabla*/
-  .tabla{ /*poner la tabla en*/
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
-  }
 
-  .Checkbox {
-    transform: scale(2); /* Escalar el tamaño del checkbox */
-    accent-color: #FF00A1;
-}
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 376px) {
+    body {
+        margin: 20px;
+    }
 
-.button2 {
-    border: 1px solid #FF00A1;
-    border-radius: 5%;
-    width: 10%;
-    min-width: 150px;
-    height: 30px;
-    margin-left: 1%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Montserrat', 'sans-serif';
-    font-size: 13px;
-    cursor: pointer;
-    overflow: hidden; /* Impedir que el pseudo-elemento se salga del botón */
-    position: relative; /* Para que el pseudo-elemento se posicione correctamente */
-    background-color: white; /* Fondo inicial */
-}
+    .container {
+        padding: 20px;
+    }
 
-.button2::before {
-    content: "";
-    position: absolute;
-    top: var(--y, 50%);
-    left: var(--x, 50%);
-    width: 0;
-    height: 0;
-    background-color: #e0ffe8; /* Color para el efecto */
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.5s, height 0.5s; /* Suavizar la expansión */
-}
+    .titulo {
+        font-size: 32px;
+    }
 
-.button2:hover::before {
-    width: 320px; /* Tamaño suficiente para cubrir el botón */
-    height: 320px;
-}
+    .titulostabla{
+        font-size: 13px;
+    }
 
-.button2:active {
-    background-color: #FF00A1;
-    transform: scale(0.95);
+    .textousuarios{
+        font-size: 13px;
+    }
+
+
+    label {
+        font-size: 13px;
+    }
+
+    input,
+    button {
+        font-size: 13px;
+    }
+
+    .boton {
+        font-size: 13px;
+    }
 }

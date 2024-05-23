@@ -1,26 +1,25 @@
-*{
+/* Estilos generales */
+* {
     margin: 0px;
     box-sizing: border-box;
     padding: 0;
 }
 
-body{
-    font-family: 'Monsterrat', sans-serif;
+body {
+    font-family: 'Outfit', sans-serif;
     margin: 80px;
-  
     min-height: 100vh;
 }
 
-
 .titulo {
-    font-family: 'Playfair Display', sans-serif;
+    font-family: 'Outfit', sans-serif;
     font-size: 60px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.texto{
-    font-family: 'Montserrat', sans-serif;
+.texto {
+    font-family: 'Outfit', sans-serif;
     font-size: 20px;
 }
 
@@ -29,49 +28,53 @@ body{
     margin: 0 auto;
     padding: 60px;
     margin-bottom: 80px;
-    
 }
 
-.email{
+.email {
     font-size: 20px;
 }
-.desplegable select{
 
-    width: 100%; /* Ajusta el ancho del desplegable al 100% del contenedor */
-    padding: 10px; /* Ajusta el relleno interno del desplegable */
+.email-input {
     font-size: 20px;
-    border-radius: 8px; /* Establece el radio de los bordes para que estén redondeados */
-    border-color: #888;
-}
-
-.email-input{
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Outfit', sans-serif;
     width: 100%;
+    text-align: left;
 }
 
-.escribir-textarea{
+.desplegable select {
+    width: 100%;
+    padding: 10px;
     font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
+    border-radius: 8px;
+    border-color: #888;
+    cursor: pointer;
 }
-.confirmar{
+
+.escribir-textarea {
     font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Outfit', sans-serif;
 }
-.consulta{
+
+.confirmar {
+    font-size: 20px;
+    font-family: 'Outfit', sans-serif;
+}
+
+.consulta {
     font-size: 20px;
 }
 
-.escribir{
+.escribir {
     font-size: 20px;
 }
+
 .search-btn {
     cursor: pointer;
     margin-left: 10px;
 }
 
 .search-btn img {
-    width: 30px; /* Ajusta el tamaño de la imagen según sea necesario */
+    width: 30px;
     height: auto;
 }
 
@@ -80,98 +83,106 @@ section {
     background-color: #C6FFD0;
 }
 
-
 label {
     font-size: 20px;
     margin-bottom: 5px;
- 
 }
-
-
 
 /* Estilos para el formulario */
 
-.correo{
+.correo {
     margin-bottom: 15px;
 }
+
 /* Estilo del textarea */
 #escribir {
-    width: 100%; /* Ancho del textarea */
-    height: 200px; /* Altura del textarea */
-    padding: 10px; /* Espaciado interno */
-    font-size: 20px; /* Tamaño de fuente */
-    border: 1px solid #ccc; /* Borde del textarea */
-    border-radius: 5px; /* Radio de borde */
-    resize: vertical; /* Permitir redimensionamiento vertical */
-  }
-  
-  /* Estilo para la etiqueta del textarea */
-  label[for="escribir"] {
-    margin-top: 20px; /* Espacio encima de la etiqueta */
-    display: block; /* Mostrar en bloque */
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    font-size: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+}
 
-  }
-  
-/*botón*/
-  .button2 {
-    border: 1px solid #FF00A1;
-    border-radius: 5%;
-    width: 10%;
-    min-width: 150px;
-    height: 30px;
-    margin-left: 1%;
+/* Estilo para la etiqueta del textarea */
+label[for="escribir"] {
+    margin-top: 20px;
+    display: block;
+}
+
+a:hover{
+    background: white;
+}
+
+.boton-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Montserrat', 'sans-serif';
+    margin-top: 20px;
+}
+
+.boton {
     font-size: 20px;
+    font-family: 'Outfit', sans-serif;
     cursor: pointer;
-    overflow: hidden; /* Impedir que el pseudo-elemento se salga del botón */
-    position: relative; /* Para que el pseudo-elemento se posicione correctamente */
-    background-color: white; /* Fondo inicial */
-    margin: auto;
+    width: 150%; /* Aumenta el ancho del botón */
+    max-width: 400px; /* Ancho máximo del botón */
 }
 
-.button2::before {
-    content: "";
-    position: absolute;
-    top: var(--y, 50%);
-    left: var(--x, 50%);
-    width: 0;
-    height: 0;
-    background-color: #FF00A1; /* Color para el efecto */
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    transition: width 0.5s, height 0.5s; /* Suavizar la expansión */
-    margin-top: 15px;
-    margin: auto;
+input,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
-.button2:hover::before {
-    width: 320px; /* Tamaño suficiente para cubrir el botón */
-    height: 320px;
+button:hover {
+    background-color: #820153;
+    color: white;
+    cursor: pointer;
 }
 
-.button2:active {
-    background-color: #FF00A1;
-    transform: scale(0.95);
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 376px) {
+    body {
+        margin: 20px;
+    }
+    
+    .container {
+        max-width: 100%;
+        padding: 20px;
+    }
+    
+    .titulo {
+        font-size: 32px;
+    }
+    
+    .texto,
+    .email,
+    .email-input,
+    .escribir-textarea,
+    .confirmar,
+    .consulta,
+    .escribir{
+        font-size: 13px;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    .boton-container {
+        width: 100%;
+    }
+    
+    .boton {
+        width: 100%;
+        font-size: 13px;
+    }
 }
-  
-.boton-cta{
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    z-index: 1;
-
-}
-  
-.boton-cta{
-    font-size: 20px;
-    font-family: 'Montserrat', sans-serif;
-    z-index: 1;
-
-}
-
-
-
-
